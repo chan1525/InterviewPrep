@@ -1,6 +1,7 @@
 import { getRandomInterviewCover } from "@/lib/utils";
 import { google } from "@ai-sdk/google";
 import { generateText } from "ai";
+import { db } from "@/firebase/admin"; // Add this import or adjust to your actual db import path
 
 export async function GET(){
     return Response.json({success:true,data:'THANK YOU!'},{status:200});
@@ -47,4 +48,3 @@ export async function POST(request:Request){
           return Response.json({ success: false, error: error }, { status: 500 });
         }
       }
-}
